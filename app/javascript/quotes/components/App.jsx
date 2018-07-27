@@ -9,7 +9,11 @@ import QuotesDisplay from './QuotesDisplay'
 const App = (props) => (
   <Router>
    <div>
-     <Route path="/" component={QuotesDisplay} />
+     <Route
+       path="/"
+       startingQuoteId={props.startingQuoteId}
+       render={(routeProps) => <QuotesDisplay {...props} {...routeProps} />}
+     />
    </div>
   </Router>
 )
